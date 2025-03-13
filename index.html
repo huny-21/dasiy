@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이지 후원 페이지</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden; /* 가로 스크롤 방지 */
+            background-color: #466550; /* 배경색 설정 */
+        }
+
+        /* 전체 페이지 컨테이너 */
+        .image-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 기본 이미지 스타일 (PC 및 태블릿 가로 모드) */
+        .background-image {
+            width: 100vw; /* 가로 화면 100% */
+            height: auto;
+            max-height: 100vh; /* 세로 크기 최대 제한 */
+            object-fit: contain; /* 이미지 비율 유지 */
+            background-color: #466550;
+            display: block;
+        }
+
+        /* 태블릿 및 모바일 세로 모드에서 가로 기준 자동 축소 */
+        @media (max-width: 1024px) and (orientation: portrait) {
+            .background-image {
+                width: 100%; /* 가로를 기준으로 자동 조정 */
+                height: auto;
+                max-height: 100vh;
+                object-fit: contain;
+                margin: auto;
+            }
+        }
+
+        /* 후원 버튼 (화면 하단 고정) */
+        .donate-button {
+            position: fixed; /* 화면 하단 고정 */
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 16px 32px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            background: #fff;
+            border: 2px solid #333;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
+            z-index: 1000;
+        }
+
+        /* 마우스 올릴 때 버튼 효과 */
+        .donate-button:hover {
+            transform: translateX(-50%) scale(1.1);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+            background: #f8f8f8;
+        }
+
+        /* 버튼 클릭 시 효과 */
+        .donate-button:active {
+            transform: translateX(-50%) scale(0.95);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 이미지 섹션 (반응형 적용) -->
+    <div class="image-container">
+        <img src="https://i.imgur.com/B7Mc7O1.png" alt="첫 번째 이미지" class="background-image">
+        <img src="https://i.imgur.com/R3i13aZ.png" alt="두 번째 이미지" class="background-image">
+        <img src="https://i.imgur.com/n1VPvCj.png" alt="세 번째 이미지" class="background-image">
+        <img src="https://i.imgur.com/GFZAD9E.png" alt="네 번째 이미지" class="background-image">
+    </div>
+
+    <!-- 후원 버튼 (화면 하단 고정) -->
+    <a href="https://www.goodneighbors.kr/support_pay/regular.gn?campaignCode=FA2025027486&supptbiz=1&giveMoney=30000&cpYN=Y" 
+       target="_blank" class="donate-button">
+        🌼 Sunny로 부터 Daisy가 피는 순간
+    </a>
+
+</body>
+</html>
