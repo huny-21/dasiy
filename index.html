@@ -1,132 +1,134 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>찬란하게 피어날 데이지</title>
-    <link rel="icon" type="image/png" href="https://huny-21.github.io/daisy/favicon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>찬란하게 피어날 데이지</title>
+  <link rel="icon" type="image/png" href="https://huny-21.github.io/daisy/favicon.png">
 
-    <!-- SEO & 설명 추가 -->
-    <meta name="description" content="어두운 환경 속에서도 피어나는 Daisy, 인도네시아 여아들을 위한 후원 캠페인. 함께 해주세요.">
-    <meta name="keywords" content="후원, 기부, 인도네시아, 여아, 조혼 방지, 캠페인">
-    <meta name="author" content="Good Neighbors">
+  <!-- SEO & 설명 추가 -->
+  <meta name="description" content="어두운 환경 속에서도 피어나는 Daisy, 인도네시아 여아들을 위한 후원 캠페인. 함께 해주세요.">
+  <meta name="keywords" content="후원, 기부, 인도네시아, 여아, 조혼 방지, 캠페인">
+  <meta name="author" content="Good Neighbors">
 
-    <!-- SNS 공유 시 썸네일 및 설명 추가 -->
-    <meta property="og:title" content="데이지 후원 페이지">
-    <meta property="og:description" content="어두운 환경 속에서도 피어나는 Daisy, 인도네시아 여아들을 위한 후원 캠페인. 함께 해주세요.">
-    <meta property="og:image" content="https://yourwebsite.com/daisy-thumbnail.png">
-    <meta property="og:url" content="https://goodneighborsk2daisy.store">
+  <!-- SNS 공유 시 썸네일 및 설명 추가 -->
+  <meta property="og:title" content="데이지 후원 페이지">
+  <meta property="og:description" content="어두운 환경 속에서도 피어나는 Daisy, 인도네시아 여아들을 위한 후원 캠페인. 함께 해주세요.">
+  <meta property="og:image" content="https://yourwebsite.com/daisy-thumbnail.png">
+  <meta property="og:url" content="https://goodneighborsk2daisy.store">
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        body, html {
-            width: 100%;
-            height: 100%;
-            overflow-x: hidden; /* 가로 스크롤 방지 */
-            background-color: #466550;
-        }
+    body, html {
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden; /* 가로 스크롤 방지 */
+      background-color: #466550;
+    }
 
-        /* 전체 페이지 컨테이너 */
-        .image-container {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    /* 전체 페이지 컨테이너 */
+    .image-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* 모바일에서 후원 버튼 공간 확보용 여백 추가 */
+    }
 
-        /* 기본 이미지 스타일 (PC 및 태블릿 가로 모드) */
-        .background-image {
-            width: 100vw; /* 가로 화면 100% */
-            height: auto;
-            max-height: 100vh; /* 세로 크기 최대 제한 */
-            object-fit: contain; /* 이미지 비율 유지 */
-            background-color: #466550;
-            display: block;
-        }
+    /* 기본 이미지 스타일 (PC 및 태블릿 가로 모드) */
+    .background-image {
+      width: 100vw; /* 가로 화면 100% */
+      height: auto;
+      max-height: 100vh; /* 세로 크기 최대 제한 */
+      object-fit: contain; /* 이미지 비율 유지 */
+      background-color: #466550;
+      display: block;
+    }
 
-        /* 태블릿 및 모바일 세로 모드에서 가로 기준 자동 축소 */
-        @media (max-width: 1024px) and (orientation: portrait) {
-            .background-image {
-                width: 100%;
-                height: auto;
-                max-height: 100vh;
-                object-fit: contain;
-                margin: auto;
-            }
-        }
+    /* 태블릿 및 모바일 세로 모드에서 가로 기준 자동 축소 */
+    @media (max-width: 1024px) and (orientation: portrait) {
+      .background-image {
+        width: 100%; /* 가로를 기준으로 자동 조정 */
+        height: auto;
+        max-height: 100vh;
+        object-fit: contain;
+        margin: auto;
+      }
+    }
 
-        /* 후원 버튼 (화면 하단 고정) */
-        .donate-button {
-            position: fixed;
-            bottom: 5vh;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 2vw 4vw; /* 반응형 패딩 */
-            font-size: 2.5vw; /* 화면 너비에 비례한 글자 크기 */
-            font-weight: bold;
-            color: #333;
-            background: #fff;
-            border: 2px solid #333;
-            border-radius: 50px;
-            cursor: pointer;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 1vw;
-            max-width: 70%;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
-            z-index: 1000;
-            text-align: center;
-            justify-content: center;
-        }
+    /* 후원 버튼 (화면 하단 고정) */
+    .donate-button {
+      position: fixed;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 16px 32px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+      background: #fff;
+      border: 2px solid #333;
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
+      z-index: 1000;
+      text-align: center;
+      justify-content: center;
+      max-width: 80%;
+    }
 
-        /* 마우스 올릴 때 버튼 효과 */
-        .donate-button:hover {
-            transform: translateX(-50%) scale(1.05);
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
-            background: #f8f8f8;
-        }
+    /* 마우스 올릴 때 버튼 효과 */
+    .donate-button:hover {
+      transform: translateX(-50%) scale(1.05);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+      background: #f8f8f8;
+    }
 
-        /* 버튼 클릭 시 효과 */
-        .donate-button:active {
-            transform: translateX(-50%) scale(0.95);
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-        }
+    /* 버튼 클릭 시 효과 */
+    .donate-button:active {
+      transform: translateX(-50%) scale(0.95);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    }
 
-        /* 모바일에서 후원 버튼 크기 조절 */
-        @media (max-width: 768px) {
-            .donate-button {
-                font-size: 2.6vw;
-                padding: 3vw 5vw;
-               min-width: 110px;  /* 모바일 최소 크기 */
-               max-width: 250px;  /* 모바일 최대 크기 */
-               min-height: 30px;  /* 모바일 최소 높이 */
-               max-height: 60px;  /* 모바일 최대 높이 */
-            }
-        }
-    </style>
+    /* 모바일에서 후원 버튼 반응형 크기 조정 */
+    @media (max-width: 768px) {
+      .donate-button {
+        font-size: 4vw;
+        padding: 3vw 5vw;
+        max-width: 85%;
+      }
+      /* 모바일에서 이미지 컨테이너 하단에 여백 추가하여 버튼과 겹치지 않게 함 */
+      .image-container {
+        padding-bottom: 100px; /* 버튼 높이에 따라 조절 */
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- 이미지 섹션 (반응형 적용) -->
-    <div class="image-container">
-        <img src="https://i.imgur.com/B7Mc7O1.png" alt="첫 번째 이미지" class="background-image">
-        <img src="https://i.imgur.com/R3i13aZ.png" alt="두 번째 이미지" class="background-image">
-        <img src="https://i.imgur.com/n1VPvCj.png" alt="세 번째 이미지" class="background-image">
-        <img src="https://i.imgur.com/GFZAD9E.png" alt="네 번째 이미지" class="background-image">
-    </div>
+  <!-- 이미지 섹션 (반응형 적용) -->
+  <div class="image-container">
+    <img src="https://i.imgur.com/B7Mc7O1.png" alt="첫 번째 이미지" class="background-image">
+    <img src="https://i.imgur.com/R3i13aZ.png" alt="두 번째 이미지" class="background-image">
+    <img src="https://i.imgur.com/n1VPvCj.png" alt="세 번째 이미지" class="background-image">
+    <img src="https://i.imgur.com/GFZAD9E.png" alt="네 번째 이미지" class="background-image">
+  </div>
 
-    <!-- 후원 버튼 (반응형 크기 조정) -->
-    <a href="https://www.goodneighbors.kr/support_pay/regular.gn?campaignCode=FA2025027486&supptbiz=1&giveMoney=30000&cpYN=Y" 
-       target="_blank" class="donate-button">
-        🌼 Sunny로 부터 Daisy가 피는 순간
-    </a>
+  <!-- 후원 버튼 (화면 하단 고정) -->
+  <a href="https://www.goodneighbors.kr/support_pay/regular.gn?campaignCode=FA2025027486&supptbiz=1&giveMoney=30000&cpYN=Y" 
+     target="_blank" class="donate-button">
+    🌼 Sunny로 부터 Daisy가 피는 순간
+  </a>
 
 </body>
 </html>
