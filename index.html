@@ -78,7 +78,7 @@
             display: flex;
             align-items: center;
             gap: 1vw;
-            max-width: 80%;
+            max-width: 70%;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
             z-index: 1000;
@@ -104,7 +104,10 @@
             .donate-button {
                 font-size: 4vw;
                 padding: 3vw 5vw;
-                max-width: 85%;
+               min-width: 120px;  /* 모바일 최소 크기 */
+               max-width: 250px;  /* 모바일 최대 크기 */
+               min-height: 35px;  /* 모바일 최소 높이 */
+               max-height: 70px;  /* 모바일 최대 높이 */
             }
         }
     </style>
